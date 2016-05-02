@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    function ascend(){
+        num = document.getElementById("nums").value;
+        numsy =num.split(",");
+        for (var x=0;x<numsy.length; x++){
+        if(!isNaN(numsy[x]) ){numsy[x]=parseInt(numsy[x]);}
+        else{alert("Please Enter numbers only"); return false;}
+        }
+        do{
+        swap= false;
+        for (i=0; i<= numsy.length ; i++){
+            if (numsy[i] > numsy[i+1]){
+                cont=(numsy[i]);
+                numsy[i]=numsy[i+1];
+                numsy[i+1]= cont ;
+                swap =true;
+            }
+            }
+         } while(swap);
+        alert(numsy);
+        }
+    function descend(){
+        num = document.getElementById("nums").value;
+        numsy =num.split(",");
+        for (var x=0;x<numsy.length; x++){
+        if(!isNaN(numsy[x])){numsy[x]=parseInt(numsy[x]);}
+        else{alert("Please Enter numbers only"); return false;}
+        }
+        do{
+        swap= false;
+        for (i=0; i<= numsy.length ; i++){
+            if (numsy[i] < numsy[i+1]){
+                cont=(numsy[i]);
+                numsy[i]=numsy[i+1];
+                numsy[i+1]= cont ;
+                swap =true;
+            }
+            }
+         } while(swap);
+        alert(numsy);
+        }
+/*12,93,24,54,13*/
+</script>
+<head>
+    <title>Sort</title>
+</head>
+<body background="http://wallpapers55.com/wp-content/uploads/2013/11/Line-Gradient-Background-Vector.jpg" style="color:white">
+<h1>Number Sort</h1>
+<h3>Enter numbers to be sorted</h3>
+<p>Separate your numbers with a comma</p>
+Numbers:<input type="text" id="nums">
+<br>
+<button onclick="ascend()">Sort Ascending!!!</button>
+<button onclick="descend()">Sort Descending!!!</button>
+<p id="set"></p>
+</body>
+</html>

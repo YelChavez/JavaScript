@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    function ascend(){
+        named = document.getElementById("names").value;
+        numsy =named.split(",");
+        for (var x=0;x<numsy.length; x++){
+        if(isNaN(numsy[x]) && !parseInt(numsy[x])){numsy[x]= numsy[x].toUpperCase();}
+        else{alert("Please Enter alphabets only"); return false;}
+        }
+        do{
+        swap= false;
+        for (i=0; i<= numsy.length ; i++){
+            if (numsy[i] > numsy[i+1]){
+                cont=(numsy[i]);
+                numsy[i]=numsy[i+1];
+                numsy[i+1]= cont ;
+                swap =true;
+            }
+            }
+         } while(swap);
+        alert(numsy);
+        }
+    function descend(){
+        named = document.getElementById("names").value;
+        numsy =named.split(",");
+        for (var x=0;x<numsy.length; x++){
+        if(isNaN(numsy[x]) && !parseInt(numsy[x])){numsy[x]= numsy[x].toUpperCase();}
+        else{alert("Please Enter alphabets only"); return false;}
+        }
+        do{
+        swap= false;
+        for (i=0; i<= numsy.length ; i++){
+            if (numsy[i] < numsy[i+1]){
+                cont=(numsy[i]);
+                numsy[i]=numsy[i+1];
+                numsy[i+1]= cont ;
+                swap =true;
+            }
+            }
+         } while(swap);
+        alert(numsy);
+        }
+/* Grace,miriam,mar,duterte,binay */
+</script>
+<head>
+    <title>Sort</title>
+</head>
+<body background="http://wallpapers55.com/wp-content/uploads/2013/11/Line-Gradient-Background-Vector.jpg" style="color:white">
+<h1>Name Sort</h1>
+<h3>Enter names to be sorted</h3>
+<p>Separate your names with a comma</p>
+Names:<input type="text" id="names">
+<br>
+<button onclick="ascend()">Sort Ascending!!!</button>
+<button onclick="descend()">Sort Descending!!!</button>
+<p id="set"></p>
+</body>
+</html>
