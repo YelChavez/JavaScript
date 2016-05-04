@@ -41,6 +41,7 @@ Answer:<input type="text" id="answ">
         document.getElementById("you").innerHTML="You're on number " + (stop+1);
         if(stop==10){
             document.getElementById("you").innerHTML="See Results";
+            document.getElementById("answ").disabled=true;
             document.getElementById("none").style.visibility = "hidden";
             alert("Your score is " + score)
             }
