@@ -17,16 +17,11 @@ SEARCH:<input type="text" id="se"/>
 <script language="JAVASCRIPT">
     var objcontainer=[];
     function save(){
-        var detail=[];
         var name = document.getElementById("name").value;
         var adds = document.getElementById("adds").value;
         var emad = document.getElementById("emad").value;
         var cont = document.getElementById("cont").value;
-        detail.push(name)
-        detail.push(adds)
-        detail.push(emad)
-        detail.push(cont)
-        blah = new Person(detail[0],detail[1],detail[2],detail[3])
+        blah = new Person(name,adds,emad,cont)
         objcontainer.push(blah)
         document.getElementById("name").value="";
         document.getElementById("adds").value="";
