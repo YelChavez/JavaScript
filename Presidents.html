@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>President</title></head>
+<body background="https://i.ytimg.com/vi/RGrKp6TQj98/maxresdefault.jpg"><br><br><br><br>
+<center><h2>Who are you going to vote for President?</h2>
+<input type="text" id="name" placeholder="Type your candidate here" style="text-align:center"><br>
+<button onclick="submit()">Submit Vote!</button><br>
+<center><table>
+    <tr><td>ID#</td><td><center>NAME            </center></td><td>       AGE</td></tr>
+    <tr><td>1  </td><td><center>Rodrigo Duterte </center></td><td><center>70</center></td></tr>
+    <tr><td>2  </td><td><center>Grace Poe       </center></td><td><center>50</center></td></tr>
+    <tr><td>3  </td><td><center>Miriam Santiago </center></td><td><center>72</center></td></tr>
+    <tr><td>4  </td><td><center>Mar Roxas       </center></td><td><center>65</center></td></tr>
+    <tr><td>5  </td><td><center>Jejomar Binay   </center></td><td><center>75</center></td></tr>
+</table></center></center>
+<script LANGUAGE="JavaScript">
+    //constructor
+    function candidate(id,name,age,comment){
+       this.id      = id;
+       this.name    = name;
+       this.age     = age;
+       this.comment = comment;
+    }
+    var duterte = new candidate (1, "Rodrigo Duterte", 70, "Leadership");
+    var poe     = new candidate (2, "Grace Poe", 50, "Congratulations, you have chosen a valid candidate");
+    var miriam  = new candidate (3, "Miriam Santiago", 72, "Intelligence");
+    var roxas   = new candidate (4, "Mar Roxas", 65, "I am sorry but your candidate is blacklisted");
+    var binay   = new candidate (5, "Jejomar Binay", 75, "I am sorry but your candidate is blacklisted");
+    var container=[duterte,poe,miriam,roxas,binay]
+    //comments
+    function submit(){
+            var name= document.getElementById("name").value;
+            flag = 0;
+            for (x in container){
+                if (container[x].name.toLowerCase()===name.toLowerCase()){ alert(container[x].comment);}
+                else{flag += 1}
+            }
+            if (flag==5){alert("There is no such candidate")}
+            }
+</script>
+</body>
+</html>
