@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<script LANGUAGE = "Javascript">
+    var rand = Math.floor((Math.random() * 100) + 1);
+    var counter=4
+    function myFunction(){
+    if (counter != 0){
+        document.getElementById("try").innerHTML = "Tries left: " + counter;
+        var guess= document.getElementById("guessy").value;
+        if (guess <=100 && guess >=0){
+            if (guess < rand){
+              counter -= 1
+              document.getElementById("demo").innerHTML = "Go Higher!";
+            }
+            else if (guess > rand){
+              counter -= 1
+              document.getElementById("demo").innerHTML = "Go Lower!";
+              }
+            else{
+              document.getElementById("demo").innerHTML = "You Won!!!";
+            }
+        }
+        else{
+        document.getElementById("demo").innerHTML = "Don't Exceed from the limits";
+        }
+        }
+    else{
+         document.getElementById("try").innerHTML = "Tries left: " + counter;
+         document.getElementById("demo").innerHTML = "You Lose, Game over!";
+         document.getElementById("ans").innerHTML = "The answer is " + rand;
+
+
+    }
+    }
+</script>
+<head>
+    <title>Number Guessing</title>
+</head>
+<body background="http://wallpapers55.com/wp-content/uploads/2013/11/Line-Gradient-Background-Vector.jpg" style="color:white">
+<br>
+<h1>Number Guessing Game 1-100</h1>
+<h4 id="try">Tries left: 5</h4>
+Your Guess:<input type="number" id="guessy">
+<button onclick="myFunction()">Check?!!!</button>
+<p id="demo"></p>
+<p id="ans"></p>
+</body>
+</html>

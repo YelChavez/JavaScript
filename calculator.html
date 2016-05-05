@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script>
+function home(choice){
+    x= document.getElementById("num1").value
+    y= document.getElementById("num2").value
+    switch(choice){
+        case 'add':
+           document.getElementById("num1").value = parseInt(x) + parseInt(y);
+           break;
+        case 'sub':
+            document.getElementById("num1").value= x - y;
+            break;
+        case 'mul':
+           document.getElementById("num1").value = x * y;
+           break;
+        case 'div':
+            document.getElementById("num1").value = x / y;
+            break;
+        case 'c':
+            document.getElementById("num1").value = " ";
+            document.getElementById("num2").value = " ";
+            break;
+    }
+}
+</script>
+<body background="http://i.stack.imgur.com/f6vGv.png">
+<br><br>
+Number:<input type="number" id="num1"><input type="number" id="num2">
+<button onclick="home('add')"> + </button>
+<button onclick="home('sub')"> - </button>
+<button onclick="home('mul')"> * </button>
+<button onclick="home('div')"> / </button>
+<button onclick="home('c')"> c </button>
+<p id="test"></p>
+</body>
+</html>

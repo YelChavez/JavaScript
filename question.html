@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body background="http://wallpoper.com/images/00/27/14/93/gravity-physics_00271493.jpg" style="color:white">
+<br>
+<p id="you">You're on number 1</p>
+Answer:<input type="text" id="answ">
+<button onclick="submit()" id="none">submit!</button>
+<button onclick="see()">See Result!</button>
+<p id="yow"></p>
+<p>1. Is anything that has mass and volume (occupies space).</p>
+<p>2. The amount of space occupied by a three-dimensional figure as measured in cubic units (as inches, quarts, or centimeters)</p>
+<p>3. A measure of the amount of matter in an object. It is usually measured in grams or kilograms.</p>
+<p>4. The force of attraction between all masses in the universe; especially the attraction of the earth's mass for bodies near its surface. </p>
+<p>5. Is any interaction that, when unopposed, will change the motion of an object.</p>
+<p>6. The force that opposes the motion of an object</p>
+<p>7. The action or process of moving or being moved.</p>
+<p>8. A tendency to do nothing or to remain unchanged.</p>
+<p>9. Is done when a force that is applied to an object moves that object.</p>
+<p>10.Is work scalar or vector</p>
+<script language="JAVASCRIPT">
+    var corAns= ["matter","volume","mass","gravity","force","friction","motion","inertia","work","scalar"]
+    var ans = [];
+    var stop = 0;
+    var score = 0
+    function submit(){
+        while (stop<10){
+        x= document.getElementById("answ").value
+        ans.push(x.toLowerCase())
+            if (ans[stop] === corAns[stop]){
+            alert("correct!");
+            score ++;
+            console.log(score)
+            }
+            else{alert("wrong!");}
+        document.getElementById("answ").value="";
+        stop ++;
+        document.getElementById("you").innerHTML="You're on number " + (stop+1);
+        if(stop==10){
+            document.getElementById("you").innerHTML="See Results";
+            document.getElementById("answ").disabled=true;
+            document.getElementById("none").style.visibility = "hidden";
+            alert("Your score is " + score)
+            }
+        return stop;
+        }
+    }
+    function see(){
+        alert("Your score is " + score);
+    }
+</script>
+</body>
+</html>

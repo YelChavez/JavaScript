@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script>
+function home(){
+    document.getElementById("test").innerHTML = "";
+    x= document.getElementById("num").value
+    j=1
+    while (j <= x  ){
+       for (var i=j;i>=1; i--){
+       document.getElementById("test").innerHTML += "*";
+       }
+    j++;
+    document.getElementById("test").innerHTML += "<br>";
+    }
+}
+</script>
+<body>
+<br>
+Number:<input type="number" id="num">
+<button onclick="home()">Create</button>
+<center><p id="test"></p></center>
+</body>
+</html>

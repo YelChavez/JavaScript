@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+</head>
+<body background="http://wallpapers55.com/wp-content/uploads/2013/11/Line-Gradient-Background-Vector.jpg" style="color:white">
+<br><br><br><br><br><br><br><br>
+<table>
+<tr><td>Name:          </td><td><input type="text" id="name"></td></tr><br>
+<tr><td>Adress:        </td><td><input type="text" id="adds"></td></tr><br>
+<tr><td>Email Adress:  </td><td><input type="text" id="emad"></td></tr><br>
+<tr><td>Contact Number:</td><td><input type="text" id="cont"></td></tr><br>
+</table>
+<button onclick="save()" >-----------------------------------------SAVE!-----------------------------------------</button><br>
+SEARCH:<input type="text" id="se"/>
+<button onclick="search()" >Search!</button>
+<script language="JAVASCRIPT">
+    var objcontainer=[];
+    function save(){
+        var name = document.getElementById("name").value;
+        var adds = document.getElementById("adds").value;
+        var emad = document.getElementById("emad").value;
+        var cont = document.getElementById("cont").value;
+        blah = new Person(name,adds,emad,cont)
+        objcontainer.push(blah)
+        document.getElementById("name").value="";
+        document.getElementById("adds").value="";
+        document.getElementById("emad").value="";
+        document.getElementById("cont").value="";
+        }
+    function Person(name,adds,emad,cont){
+        this.name  = name
+        this.adds  = adds
+        this.emad  = emad
+        this.cont  = cont
+    }
+    function search(){
+        var se = document.getElementById("se").value;
+        for (x in objcontainer){
+            if (objcontainer[x].name.toLowerCase() === se.toLowerCase()){
+                alert("Name: "+objcontainer[x].name+"\nAddress: "+objcontainer[x].adds+"\nEmail Address: "+objcontainer[x].emad+"\nContact Number: "+objcontainer[x].cont);
+            }
+        }
+    }
+</script>
+</body>
+</html>
